@@ -2,7 +2,6 @@
 
 Hello,
 
-C'est vide en ce moment mais en gros :
 
 Je vais utiliser la méthode constructor pour initialiser un objet étant donné que j’utilise le mot clé classe —> class Polygon.
 
