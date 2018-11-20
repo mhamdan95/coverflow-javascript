@@ -3,9 +3,10 @@
 Hello,
 
 
-Je vais utiliser la méthode constructor pour initialiser un objet étant donné que j’utilise le mot clé classe —> class Polygon.
+Je vais arreter la rotation de mes images en mettant des petites fleches à droite et à gauche pour les directions de mes images horizontalement.
 
 Je dois utiliser l’effect ‘coverflow' en indiquant sa rotation, sa profondeur et à quel point ils sera prolongé.
+
 
 coverflow: {
     rotate: 50,
