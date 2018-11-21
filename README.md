@@ -1,25 +1,38 @@
 # coverflow-javascript
 
-Hello,
 
 
-Je vais arreter la rotation de mes images en mettant des petites fleches à droite et à gauche pour les directions de mes images horizontalement.
+• Mon fichier CSS
+• Mon fichier JavaScript
+• Mon fichier HTML
 
-Je dois utiliser l’effect ‘coverflow' en indiquant sa rotation, sa profondeur et à quel point ils sera prolongé.
+
+• Mon fichier CSS
+
+Commençant par mon fichier CSS, Je dois utiliser l’effect ‘coverflow' en indiquant sa rotation, sa
+profondeur et à quel point ils sera prolongé.
+coverflow : { rotate: 50, stretch: 0, depth: 100, modifier: 1).
+
+Je crée le background de mon site, je donne mes instructions, la taille en largeur et en
+longueur, je passe au CSS transforme + le 3D, je ferai 3 style (1er horizontal, 2eme
+verticale qui auront l’option transform-style: preserve-3d) et le 3eme qui sera horizontal
+normale avec l’effet de glissement bien sur et un zoom automatique quand on le mouse
+s’indique sur une image.
 
 
-coverflow: {
-    rotate: 50,
-    stretch: 0,
-    depth: 100,
-    modifier: 1,
+• Mon fichier JavaScript
 
-MES CLASSES PAR ORDRE :
+Je met des petites flèches à droite et à gauche pour choisir la direction des mes images.
 
-Je vais tout d’abord créer ma classe coverflow qui contiendra un tableau d’image.
-
-- Une classe du conteneur
-- Une classe de la couverture
-- Une classe pour la glissière ET PEUT ETRE QUE J’AURAIS BESOIN DE PLUSIEURS.
+Je pense avoir besoin d’une seule classe pour le coverflow qui contiendra un tableau
+d’image.
 
 J’ai mon image principale et j’ai des images derrières.
+
+Je crée ma fonction trigonométrique (sinus, cosinus et tangente).
+
+
+
+• Mon fichier HTML
+
+Un fichier normal ou je métrerai les appels aux fichiers / dossier etc..
