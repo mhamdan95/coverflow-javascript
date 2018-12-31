@@ -4,17 +4,32 @@
         <meta charest = "UTF-8">
         <title>Coverflow 3D</title>
         <link rel="stylesheet" href="coverflow.css">
+		<script type="application/javascript" src="jquery-3.3.1.min.js"></script>
+		<script type="application/javascript" src="coverflow.js"></script>
     </head>
     <body>
         <h2>Coverflow rond</h2>
         <div class= "contenu_tout">
-            <div class="coverflow">
-                <figure><img src="images/bizarre.jpg"></figure>
-                <figure><img src="images/bouteille.jpg"></figure>
+            <div class="coverflow" id="cov1">
                 <figure><img src="images/cheval.jpg"></figure>
                 <figure><img src="images/film.jpg"></figure>
                 <figure><img src="images/fleure.jpg"></figure>
             </div>
         </div>
+		<div class= "contenu_tout">
+            <div class="coverflow" id="cov2">
+                <figure><img src="images/bizarre.jpg"></figure>
+                <figure><img src="images/bouteille.jpg"></figure>
+                <figure><img src="images/cheval.jpg"></figure>
+            </div>
+        </div>
+		<script type="text/javascript">
+         jQuery(function () {
+                // Initialisation de l'instance 1
+               $('.image').coverflow("cov1");
+				// Initialisation de l'instance 2
+               $('.image').coverflow("cov2");
+        });
+</script>
 </body>
 </html>
