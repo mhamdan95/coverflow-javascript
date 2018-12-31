@@ -12,6 +12,7 @@ body{
     margin: auto;
     perspective: 900px;
     position: relative;
+	height: 400px;
 }
 
 .coverflow{
