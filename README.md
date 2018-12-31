@@ -1,6 +1,12 @@
 # coverflow-javascript
 
+Il me reste :
 
+Créer les différentes actions, play, stop, next, select.
+Passer tes effets en JS plutôt que CSS ou manipuler les classes CSS.
+Régler les problèmes / optimiser le design pour avoir un rendu plus pro.
+
+Pour les actions, il faut que j'utilise un index et mettre un id sur chaque images.
 
 • Mon fichier CSS
 • Mon fichier JavaScript
