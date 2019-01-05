@@ -1,0 +1,176 @@
+*{
+
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(../images/coverflow/back.jpg);
+}
+
+/*Les images en 3D*/
+.responsiveGallery-container{
+	width: 100%;
+	position: relative;
+}
+
+.responsiveGallery-btn{
+	position:absolute;
+	top: 0;
+	z-index: 3;
+	display: block;
+	width: 5%;
+	height: 100%;
+}
+.responsiveGallery-btn_prev{
+	background:url(images/flechGauch.png) center center no-repeat;
+	left:5%;
+}
+.responsiveGallery-btn_next{
+	background:url(images/flechDroite.png) center center no-repeat;
+	right:5%;
+}
+
+.responsiveGallery-wrapper{
+	position: relative;
+
+	width: 90%;
+	margin: 0 auto;
+
+	padding-top: 30%;/*la hauteur du conteneur*/
+
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-perspective: 1000px;
+	-moz-perspective: 1000px;
+	-o-perspective: 1000px;
+	-ms-perspective: 1000px;
+	perspective: 1000px;
+}
+.responsiveGallery-item{
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 0;
+
+	display: block;
+	width: 20%;
+
+	opacity: 0;
+	visibility: hidden;
+}
+@media (max-width: 1000px){
+	.responsiveGallery-item{
+		width: 33.33%;
+	}
+	.responsiveGallery-wrapper{
+		padding-top: 45%;/* c'est pour ajuster la hauteur du conteneur en conséquence*/
+	}
+
+}
+@media (max-width: 560px){
+	.responsiveGallery-wrapper{
+		width: 60%;
+	}
+	.responsiveGallery-item{
+		width: 100%; /*un est affiché, mais le style du haut détermine la largeur de la fenêtre à 60*/
+	}
+	.responsiveGallery-wrapper{
+		padding-top: 80%;/*la hauteur du conteneur en conséquence*/
+	}
+	.responsiveGallery-btn{
+		width: 8%;
+	}
+}
+.responsivGallery-link{
+	display: block;
+	width: 100%;
+	box-shadow: 0px 0px 20px rgba(0,0,0,0.3);
+}
+.responsivGallery-pic{
+	width: 100%;
+	height: auto;
+}
+.w-responsivGallery-info{
+	width: 80%;
+	margin: 0 auto;
+	padding-top: 5%;
+	text-align: center;
+	color: #fff;
+}
+.responsivGallery-name{
+	font-size: 1.25em;
+}
+.responsivGallery-position{
+	padding-top: 4%;
+	font-size: 0.875em;
+	line-height: 1.3;
+}
+/*les déplacement du rond */
+.Coverflowhorizontal{
+width: 100px;
+margin: 0 auto;
+}
+
+.CoverflowVertical{
+width: 1100px;
+margin: 0 auto;
+}
+
+
+#perspective {
+  margin: 4 auto;
+  margin-top: 10px;
+  width: 200px;
+  height: 120px;
+  position: relative;
+  -webkit-perspective: 1100px;
+  perspective: 1000px;
+}
+
+#perspective2 {
+  margin: 4 auto;
+  margin-top: 10px;
+  width: 120px;
+  height: 100px;
+  position: relative;
+}
+
+#carousel {
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+}
+
+#carousel2 {
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+}
+
+#carousel figure {
+  display: block;
+  position: absolute;
+  width: 180px;
+  height: 100px;
+  opacity: 1.0;
+  margin: 20px;
+  cursor: pointer;
+ /*bien bouger les images avec un peu de glissement*/
+  transition: opacity 1s, transform 1s;
+}
+
+#carousel2 figure {
+  display: block;
+  position: absolute;
+  width: 190px;
+  height: 100px;
+  opacity: 1.0;
+  margin: 10px;
+  cursor: pointer;
+  transition: opacity 1s, transform 1s;
+}
