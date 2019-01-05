@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>COVERFLOW</title>
+	<link rel="stylesheet" type="text/css" href="css/coverflow_style.css">
+	<style type="text/css">
+		html{
+		}
+		.w-gallery{
+			margin-top: 80px;
+		}
+	</style>
+	<script type="text/javascript" src="lib/modernizr.custom.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="coverflow3options.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$('.responsiveGallery-wrapper').responsiveGallery({
+	animatDuration: 400,
+	$btn_prev: $('.responsiveGallery-btn_prev'),
+	$btn_next: $('.responsiveGallery-btn_next'),
+			});
+			$('#carousel').covhoriz3D();
+			$('#carousel2').covrtical3D();
+		});		
+</script>
+</head>
+<body>
+<div class="jquery-script-center">
+</div>
+<h1 style="margin-top:150px; color:#FAFAFA; text-align:center;">CoverFlow comme un album</h1>
+	<div class="w-gallery">
+  <section id="responsiveGallery-container" class="responsiveGallery-container">
+   <a class="responsiveGallery-btn responsiveGallery-btn_prev" href="javascript:void(0);"></a> 
+   <a class="responsiveGallery-btn responsiveGallery-btn_next" href="javascript:void(0);"></a>
+    <ul class="responsiveGallery-wrapper">
+      <li class="responsiveGallery-item"> <a href="#" class="responsivGallery-link"><img src="images/coverflow/bizarre.jpg" height="320" width="320" alt="" class="responsivGallery-pic"></a>
+        <div class="w-responsivGallery-info">
+        </div>
+      </li>
+      <li class="responsiveGallery-item"> <a href="#" class="responsivGallery-link"><img src="images/coverflow/bouteille.jpg" É alt="" class="responsivGallery-pic"></a>
+        <div class="w-responsivGallery-info">
+        </div>
+      </li>
+      <li class="responsiveGallery-item"> <a href="#" class="responsivGallery-link"><img src="images/coverflow/netch.jpg" height="320" width="320" alt="" class="responsivGallery-pic"></a>
+        <div class="w-responsivGallery-info">
+        </div>
+      </li>
+      <li class="responsiveGallery-item"> <a href="#" class="responsivGallery-link"><img src="images/coverflow/IMG.jpg" height="320" width="320" alt="" class="responsivGallery-pic"></a>
+        <div class="w-responsivGallery-info">
+        </div>
+      </li>
+      <li class="responsiveGallery-item"> <a href="#" class="responsivGallery-link"><img src="images/coverflow/fleure.jpg" height="320" width="320" alt="" class="responsivGallery-pic"></a>
+        <div class="w-responsivGallery-info">
+        </div>
+      </li>
+      <li class="responsiveGallery-item"> <a href="#" class="responsivGallery-link"><img src="images/coverflow/greve.jpg" height="320" width="320" alt="" class="responsivGallery-pic"></a>
+        <div class="w-responsivGallery-info">
+        </div>
+      </li>
+      <li class="responsiveGallery-item"> <a href="#" class="responsivGallery-link"><img src="images/coverflow/natu.jpg" height="320" width="320" alt="" class="responsivGallery-pic"></a>
+        <div class="w-responsivGallery-info">
+        </div>
+      </li>
+      <li class="responsiveGallery-item"> <a href="#" class="responsivGallery-link"><img src="images/coverflow/mer.jpg" height="320" width="320" alt="" class="responsivGallery-pic"></a>
+        <div class="w-responsivGallery-info">
+        </div>
+      </li>
+      <li class="responsiveGallery-item"> <a href="#" class="responsivGallery-link"><img src="images/coverflow/paris.jpg" height="320" width="320" alt="" class="responsivGallery-pic"></a>
+        <div class="w-responsivGallery-info">
+        </div>
+      </li>
+      <div class="CoverflowVertical">
+      	<h1 style="margin-top:10px; color:#FAFAFA; text-align:center;">CoverFlow Verticalement</h1>
+<div id="perspective2"><!-- c'est  -->
+    <div id="carousel2">
+      <figure><img src="images/CoverflowVerticalETHorizental/1.jpg" style = "width : 100%"></figure>
+         <figure><img src="images/CoverflowVerticalETHorizental/2.jpg" style = "width : 100%"></figure>
+         <figure><img src="images/CoverflowVerticalETHorizental/3.jpg" style = "width : 100%"></figure>
+         <figure><img src="images/CoverflowVerticalETHorizental/4.jpg" style = "width : 100%"></figure>
+         <figure><img src="images/CoverflowVerticalETHorizental/5.jpg" style = "width : 100%"></figure>
+         <figure><img src="images/CoverflowVerticalETHorizental/6.jpg" style = "width : 100%"></figure>
+         <figure><img src="images/CoverflowVerticalETHorizental/7.jpg" style = "width : 100%"></figure>
+         <figure><img src="images/CoverflowVerticalETHorizental/8.jpg" style = "width : 100%"></figure>
+         <figure><img src="images/CoverflowVerticalETHorizental/9.jpg" style = "width : 100%"></figure>
+         <figure><img src="images/CoverflowVerticalETHorizental/10.jpg" style = "width : 100%"></figure>
+    </div>
+  </div>
+</div>
+<div class="Coverflowhorizontal">   
+<div id="perspective"><!-- c'est  -->
+  <h1 style="margin-top:10px; color:#FAFAFA; text-align:center;">CoverFlow Horizontalement</h1>
+    <div id="carousel">
+         <figure><img src="images/CoverflowVerticalETHorizental/1.jpg" style = "width : 100%"></figure>
+         <figure><img src="images/CoverflowVerticalETHorizental/2.jpg" style = "width : 100%"></figure>
+         <figure><img src="images/CoverflowVerticalETHorizental/3.jpg" style = "width : 100%"></figure>
+         <figure><img src="images/CoverflowVerticalETHorizental/4.jpg" style = "width : 100%"></figure>
+         <figure><img src="images/CoverflowVerticalETHorizental/5.jpg" style = "width : 100%"></figure>
+         <figure><img src="images/CoverflowVerticalETHorizental/6.jpg" style = "width : 100%"></figure>
+         <figure><img src="images/CoverflowVerticalETHorizental/7.jpg" style = "width : 100%"></figure>
+         <figure><img src="images/CoverflowVerticalETHorizental/8.jpg" style = "width : 100%"></figure>
+         <figure><img src="images/CoverflowVerticalETHorizental/9.jpg" style = "width : 100%"></figure>
+         <figure><img src="images/CoverflowVerticalETHorizental/10.jpg" style = "width : 100%"></figure>
+    </div>
+  </div>
+</div>
+    </ul>
+  </section>
+</div>
+</body>
+</html>
