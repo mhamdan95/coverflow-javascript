@@ -14,7 +14,6 @@
             $obj2 = $rgWrapper.find('li'), //CoverFlowShow
             obj2Length = $obj2.length,
             support3d = Modernizr.csstransforms3d,
-            support2d = Modernizr.csstransforms,
             FlowIndex = 0;
             compteur = 3,
             formCSS = 0,
@@ -35,7 +34,6 @@
         }
 
 
-
         function getTransitionCSS(time,ease){
             return {
                 '-webkit-transition': 'all '+time+'s '+ease,
@@ -46,41 +44,19 @@
             }
         }
 
-        function getTransform7CSS(){
-            var cssArray;
-
-            if(support3d){
-                cssArray = [
-                    getTransform3dCSS('-100%',  -400,   40,     -1, 0,  'hidden'),
-                    getTransform3dCSS('0',      -350,   45,     -1, 1,  'visible'),
-
-                    getTransform3dCSS('100%',   -300,   45,     0,  1,  'visible'),
-                    getTransform3dCSS('200%',   -200,   40,     1,  1,  'visible'),
-                    getTransform3dCSS('300%',   0,      0,      2,  1,  'visible'),
-                    getTransform3dCSS('400%',   -200,   -40,    1,  1,  'visible'),
-                    getTransform3dCSS('500%',   -300,   -45,    0,  1,  'visible'),
-
-                    getTransform3dCSS('600%',   -350,   -45,    -1, 1,  'visible'),
-                    getTransform3dCSS('700%',   -400,   -40,    -1, 0,  'hidden')
-                ];
-            }
-
-            return cssArray;
-        }
+        
 
         function getTransform5CSS(){
             var cssArray;
-
             if(support3d){
+
                 cssArray = [
                     getTransform3dCSS('-100%',  -400,   45,     -1, 0,  'hidden'),
-
                     getTransform3dCSS('0',      -300,   45,     0,  1,  'visible'),
                     getTransform3dCSS('100%',   -200,   45,     1,  1,  'visible'),
                     getTransform3dCSS('200%',   0,      0,      2,  1,  'visible'),
                     getTransform3dCSS('300%',   -200,   -45,    1,  1,  'visible'),
                     getTransform3dCSS('400%',   -300,   -45,    0,  1,  'visible'),
-
                     getTransform3dCSS('500%',   -400,   -45,    -1, 0,  'hidden')
                 ];
             }
@@ -88,25 +64,6 @@
             return cssArray;
         }
 
-        function getTransform3CSS(){
-            var cssArray;
-
-            if(support3d){
-                cssArray = [
-                    getTransform3dCSS('-100%',  -400,   45,     0,  0,  'hidden'),
-
-                    getTransform3dCSS('0',      -300,   45,     1,  1,  'visible'),
-                    getTransform3dCSS('100%',   0,      0,      2,  1,  'visible'),
-                    getTransform3dCSS('200%',   -300,   -45,    1,  1,  'visible'),
-
-                    getTransform3dCSS('300%',   -400,   -45,    0,  0,  'hidden')
-                ];
-            }
-
-            return cssArray;
-        }
-
-    
         function elementdesection(fun){
             var $obj = [];
 
@@ -154,7 +111,7 @@
             var wrapperWidth = $rgWrapper.width(),
                 itemWidth = $obj2.eq(0).width();
 
-            compteur = Math.round(wrapperWidth/itemWidth);
+            compteur = Math.round(wrapperWidth/itemWidth); //ça emballe les image pour le coverflow principla
             
             if(compteur === 1){ //c'est l'image présente numéro 1
                 formCSS = getTransform1CSS();
@@ -170,7 +127,7 @@
             MouveCoverFlow(0);
             setTimeout(function(){
                 $obj2.css(getTransitionCSS(animatDuration/1000, 'ease-in-out'));
-            },10); //ici on peut rajouter une animation, après avoir défini la position initiale.
+            },10); //les animation, après avoir défini la position initiale.
 
         }).trigger('resize');
 
@@ -185,19 +142,22 @@
 })(jQuery);
 
 
-// Horizentale
+// Horizontale
 (function($){
 $.fn.covhoriz3D = function(args){
 
     var el = ({
-        carousel_frame: $(this)
+        forme_circulaire: $(this)
     });
 
-    var size = el.carousel_frame.children().size(); 
-    var panelSize = el.carousel_frame.width();
-    var translateZ = Math.round( ( panelSize / 2 ) / Math.tan( Math.PI / size ) );
+    var size = el.forme_circulaire.children().size(); // le reste de mes images derrier la photo principale 
+    var panelSize = el.forme_circulaire.width(); //la taille de du panneau de mes images
+    var translateZ = Math.round((panelSize / 2) / Math.tan(Math.PI / size)); /* là j'ai une opération qui transforme les images
+    elle est utilisée pour déplacer un élément long de l'axe z
+    dans un espace tridimensionnel.
+    */
 
-    el.carousel_frame.css({
+    el.forme_circulaire.css({
         "transform": "rotateY(0deg) translateZ(-"+translateZ+"px)"
     })
 
@@ -212,7 +172,7 @@ $.fn.covhoriz3D = function(args){
         
         for(i = 0; i < size; i++){
             var z = (rotate_int*ry)+(i*ry);     
-            el.carousel_frame.children("figure:eq("+i+")").css({
+            el.forme_circulaire.children("figure:eq("+i+")").css({
                 "transform":"rotateY("+z+"deg ) translateZ("+translateZ+"px)" // bien préciser la direction du rond
                 // il est donc horizental
             });
@@ -234,7 +194,7 @@ $.fn.covhoriz3D = function(args){
         mouvement_slid();
     });
 
-    el.carousel_frame.children().on("click", function(){
+    el.forme_circulaire.children().on("click", function(){
         new_int = -1*$(this).index();
         if(new_int < rotate_int+(-1*(size/2)) ){
             rotate_int = size + new_int;
@@ -256,14 +216,14 @@ $.fn.covhoriz3D = function(args){
 $.fn.covrtical3D = function(args){
 
     var el = ({
-        carousel_frame: $(this)
+        form_vertical: $(this)
     });
 
-    var size = el.carousel_frame.children().size(); 
-    var panelSize = el.carousel_frame.width();
-    var translateZ = Math.round( ( panelSize / 2 ) / Math.tan( Math.PI / size ) );
+    var size = el.form_vertical.children().size(); 
+    var panelSize = el.form_vertical.width();
+    var translateZ = Math.round((panelSize / 2) / Math.tan(Math.PI / size));
 
-    el.carousel_frame.css({
+    el.form_vertical.css({
         "transform": "rotateY(0deg) translateZ(-"+translateZ+"px)"
     })
 
@@ -278,7 +238,7 @@ $.fn.covrtical3D = function(args){
         
         for(i = 0; i < size; i++){
             var z = (rotate_int*ry)+(i*ry);     
-            el.carousel_frame.children("figure:eq("+i+")").css({
+            el.form_vertical.children("figure:eq("+i+")").css({
                 "transform":"rotateX("+z+"deg ) translateZ("+translateZ+"px)" // bien préciser la direction du rond
                 // il est donc horizental
             });
@@ -300,7 +260,7 @@ $.fn.covrtical3D = function(args){
         mouvement_slid();
     });
 
-    el.carousel_frame.children().on("click", function(){
+    el.form_vertical.children().on("click", function(){
         new_int = -1*$(this).index();
         if(new_int < rotate_int+(-1*(size/2)) ){
             rotate_int = size + new_int;
